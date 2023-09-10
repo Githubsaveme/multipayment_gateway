@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           fontFamily: 'Roboto',
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           useMaterial3: true,
         ),
         home: const HomeScreen());

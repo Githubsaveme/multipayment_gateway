@@ -76,6 +76,18 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: const Icon(Icons.payments),
               label: const Text("Razorpay"),
             ),
+
+            ElevatedButton.icon(
+              style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStatePropertyAll(Colors.red.withOpacity(0.03))),
+              onPressed: () {
+                startPaymentWithRazorPay(productModelSelect!);
+                debugPrint('Stripe');
+              },
+              icon: const Icon(Icons.payments),
+              label: const Text("Stripe"),
+            ),
           ],
         ),
       ),
@@ -269,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void startPaymentWithRazorPay(ProductModel productModelSelect) {
     var options = {
-      'key': 'rzp_live_ILgsfZCZoFIKMb',
+      'key': 'Key here',
       'amount': int.parse(productModelSelect.price!) * 100,
       'name': 'Umbrella Corp.',
       'currency': 'INR',
